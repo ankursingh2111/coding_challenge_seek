@@ -90,16 +90,16 @@ function App() {
 
     Object.keys(deal).map(current => {
       const priceValue = consumerPrice[current].toString().slice(0, -1);
-      const currntQuantity = quantity[current];
+      const currntQuantity = parseInt(quantity[current]);
 
       if (Object.keys(deal[current])[0] !== "1") {
-        const pricefor = Object.keys(deal[current])[0];
-        const priceto = Object.values(deal[current])[0];
+        const pricefor = parseInt(Object.keys(deal[current])[0]);
+        const priceto = parseInt(Object.values(deal[current])[0]);
 
         if (currntQuantity >= pricefor) {
           const quotient = Math.floor(currntQuantity / pricefor);
           const remainder = currntQuantity % pricefor;
-
+          console.log(quotient, remainder);
           ttlPrice[current] =
             quotient * priceto * priceValue + remainder * priceValue;
           return current;
