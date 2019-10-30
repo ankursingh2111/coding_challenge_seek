@@ -99,7 +99,7 @@ function App() {
         if (currntQuantity >= pricefor) {
           const quotient = Math.floor(currntQuantity / pricefor);
           const remainder = currntQuantity % pricefor;
-          console.log(quotient, remainder);
+
           ttlPrice[current] =
             quotient * priceto * priceValue + remainder * priceValue;
           return current;
